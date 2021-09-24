@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <div style={{ padding: 16 }}>
+        <div style={{ padding: 12 }}>
           <Route exact path={`${URI.ROOT}`}>
             <NewMatch></NewMatch>
           </Route>

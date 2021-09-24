@@ -237,7 +237,7 @@ const PlayingMatch = () => {
         ></Table>
         <Space>
           <Button type="primary" onClick={finishRound}>
-            Next Round
+            Next
           </Button>
           <Button type="primary" onClick={handleResetRoundScore}>
             Clear
@@ -267,7 +267,7 @@ const PlayingMatch = () => {
             onClick={finishMatch}
             style={{ float: "right" }}
           >
-            End Game
+            Finish
           </Button>
         </Space>
       </Space>

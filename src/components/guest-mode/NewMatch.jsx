@@ -62,11 +62,17 @@ const NewMatch = (props) => {
     setPlayerName("");
   };
 
+  const onPlayerInputKeyUp = ({ key }) => {
+    if (key === "Enter") {
+      onAddPlayer();
+    }
+  };
+
   return (
     <Space direction="vertical" style={{ width: "100%" }}>
       <Typography.Title level={2}>New Match</Typography.Title>
-      <Row gutter={[16, 16]}>
-        <Col flex="auto">
+      <Row gutter={[8, 8]}>
+        <Col span={16}>
           <Input
             placeholder="Match name"
             value={matchName}
@@ -75,11 +81,12 @@ const NewMatch = (props) => {
         </Col>
       </Row>
       <Row gutter={[8, 8]}>
-        <Col flex="auto">
+        <Col span={16}>
           <Input
             placeholder="Player name"
             value={playerName}
             onChange={(e) => setPlayerName(e.target.value)}
+            onKeyUp={onPlayerInputKeyUp}
           />
         </Col>
         <Col flex="60px">
@@ -138,7 +145,7 @@ export const StartMatch = ({ matchData }) => {
     const messageKey = "create_match";
     if (loading) {
       message.loading({
-        content: "Starting a guest match...",
+        content: "Starting a new match...",
         key: messageKey,
       });
     } else if (error) {
